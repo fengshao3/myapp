@@ -134,7 +134,6 @@ components:
                 type: string 
             introduction:
                 type: string
-	 string
     Category:
       type: "object"
       required:
