@@ -23,8 +23,7 @@ paths:
           required: true
           schema:
             type: integer
-            format: int32
-            
+            format: int32    
       responses:
         '200':
           description: '类目信息'
@@ -38,22 +37,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-
   /product/getDetail:
     post:
       description: "获取商品详情"
       parameters:
-        - sku
+        - name: sku
           in: query
           description: "sku id"
           schema:
             type: string
-            required: true
-        - token
-        - queryExts
+          required: true
+        - name: token
+          in: query
+          schema:
+            type: string
+        - name: queryExts
+          in: query
+          schema:
+              type: string
       responses:
         "200":
-          description: "OK"
+          description: 'OK'
 
 components:
   schemas:
