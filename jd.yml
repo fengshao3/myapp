@@ -5,65 +5,63 @@ info:
 servers:
   - url: 'https://bizapi.jd.com/api/'
 paths:
-  /product/getCategory:
-    post:
-      summary: '获取类目信息'
-      tags:
-        - product
-      parameters:
-        - name: token
-          in: query
-          description: '固定值'
-          schema:
-            type: string
-          required: true
-        - name: cid
-          in: query
-          required: true
-          schema:
-            type: integer
-            format: int32    
-      responses:
-        '200':
-          description: '类目信息'
-          content:
-             application/json:
-               schema:
-                 $ref: '#/components/schemas/CategoryResponse'
-        default:
-          description: 异常报错
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /product/getDetail:
-      tags:
-        - product
+    /product/getCategory:
         post:
-        description: "获取商品详情"
-      parameters:
-        - name: sku
-          in: query
-          description: "sku id"
-          schema:
-            type: string
-          required: true
-        - name: token
-          in: query
-          schema:
-            type: string
-        - name: queryExts
-          in: query
-          schema:
-              type: string
-      responses:
-        "200":
-            description: '商品详情响应'
-            content:
+            summary: '获取类目信息'
+            tags: 
+              - product
+            parameters:
+                - name: token
+                  in: query
+                  description: '固定值'
+                  schema:
+                      type: string
+                  required: true
+                - name: cid
+                  in: query
+                  required: true
+                  schema:
+                      type: integer
+                      format: int32
+            responses:
+                '200':
+                    description: '类目信息'
+                    content:
                 application/json:
                     schema:
-                        $ref: '#/components/schemas/SkuDetailResponse'
-
+                        $ref: '#/components/schemas/CategoryResponse'
+                default:
+                    description: 异常报错
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Error'
+    /product/getDetail:
+        post:
+            tags: product
+            description: "获取商品详情"
+            parameters:
+              - name: sku
+                in: query
+                description: "sku id"
+                schema:
+                    type: string
+                required: true
+              - name: token
+                in: query
+                schema:
+                    type: string
+              - name: queryExts
+                in: query
+                schema:
+                    type: string
+            responses:
+                "200":
+                    description: '商品详情响应'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SkuDetailResponse'
 components:
   schemas:
     Error:
