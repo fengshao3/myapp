@@ -8,7 +8,6 @@ paths:
   /product/getCategory:
     post:
       summary: '获取类目信息'
-      operationId: product
       tags:
         - product
       parameters:
@@ -38,8 +37,10 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
   /product/getDetail:
-    post:
-      description: "获取商品详情"
+      tags:
+        - product
+        post:
+        description: "获取商品详情"
       parameters:
         - name: sku
           in: query
@@ -57,7 +58,7 @@ paths:
               type: string
       responses:
         "200":
-            description: '类目信息'
+            description: '商品详情响应'
             content:
                 application/json:
                     schema:
