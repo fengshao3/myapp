@@ -276,6 +276,28 @@ components:
                 type: array
                 items:
                     type: integer
+    SimilarSku:
+        type: "object"
+        properties:
+            dim:
+                type: integer
+            saleName:
+                type: string
+            saleAttrList:
+                type: array
+                items:
+                    $ref: "#/components/schemas/SaleAttr"
+    SaleAttr:
+        type: "object"
+        properties:
+            imagePath:
+                type: string
+            saleValue:
+                type: string
+            skuIds:
+                type: array
+                items: 
+                    type: integer
   securitySchemes:
     oauth2:
       type: "oauth2"
