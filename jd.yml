@@ -143,7 +143,7 @@ components:
     PoolPageResponse:
        properties:
         result:
-          $ref: "#/components/schemas/SkuDetail"
+          $ref: "#/components/schemas/ProductPoolPage"
         resultCode:
           type: integer
           format: int32
@@ -232,6 +232,15 @@ components:
             success:
                 type: boolean
                 default: true
+    ProductPoolPage:
+        type: "object"
+        properties:
+            pageCount:
+                type: integer
+            skuIds:
+                type: array
+                items:
+                    type: integer
   securitySchemes:
     oauth2:
       type: "oauth2"
