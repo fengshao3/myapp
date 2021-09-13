@@ -27,9 +27,9 @@ paths:
                 '200':
                     description: '类目信息'
                     content:
-                application/json:
-                    schema:
-                        $ref: '#/components/schemas/CategoryResponse'
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/CategoryResponse'
                 default:
                     description: 异常报错
                     content:
