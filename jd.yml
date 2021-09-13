@@ -64,6 +64,26 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/SkuDetailResponse'
+    /product/getPageNum:
+        post:
+            summary: '获取商品池'
+            tags: 
+              - product
+            description: "获取商品池"
+            parameters:
+              - name: token
+                in: query
+                schema:
+                    type: string
+                required: true
+            responses:
+                "200":
+                    description: '商品详情响应'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SkuDetailResponse'
+
 components:
   schemas:
     Error:
