@@ -38,7 +38,8 @@ paths:
                                 $ref: '#/components/schemas/Error'
     /product/getDetail:
         post:
-            tags: product
+            tags: 
+              - product
             description: "获取商品详情"
             parameters:
               - name: sku
