@@ -89,6 +89,52 @@ components:
         success:
           type: boolean
           default: true
+    SkuDetailResponse:
+       properties:
+        result:
+          $ref: "#/components/schemas/SkuDetail"
+        resultCode:
+          type: integer
+          format: int32
+        resultMessage:
+          type: string
+        success:
+          type: boolean
+          default: true 
+    SkuDetail:
+        type: "object"
+        properties:
+            saleUnit:
+                type: string
+            weight:
+                type: string
+            wserve:
+                type: string
+            productArea:
+                type: string
+            wareQD:
+                type: string
+            imagePath:
+                type: string
+            param:
+                type: string
+            state:
+                type: integer
+                format: int1
+            sku:
+                type: integer
+                format: int64
+            brandName:
+                type: string
+            upc:
+                type: string
+            category:
+                type: string
+            name:
+                type: string 
+            introduction:
+                type: string
+	 string
     Category:
       type: "object"
       required:
