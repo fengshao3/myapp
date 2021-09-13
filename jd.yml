@@ -39,6 +39,21 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 
+  /product/getDetail:
+    post:
+      description: "获取商品详情"
+      parameters:
+        - sku
+          in: query
+          description: "sku id"
+          schema:
+            type: string
+            required: true
+        - token
+        - queryExts
+      responses:
+        "200":
+          description: "OK"
 
 components:
   schemas:
