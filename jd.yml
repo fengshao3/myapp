@@ -188,7 +188,9 @@ components:
     SimilarSkuResponse:
         properties:
             result:
-                $ref: "#/components/schemas/SkuDetail"
+                type: array
+                items:
+                    $ref: "#/components/schemas/SkuDetail"
             resultCode:
                 type: integer
                 format: int32
