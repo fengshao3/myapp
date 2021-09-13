@@ -140,6 +140,18 @@ components:
         success:
           type: boolean
           default: true
+    PoolPageResponse:
+       properties:
+        result:
+          $ref: "#/components/schemas/SkuDetail"
+        resultCode:
+          type: integer
+          format: int32
+        resultMessage:
+          type: string
+        success:
+          type: boolean
+          default: true 
     SkuDetailResponse:
        properties:
         result:
