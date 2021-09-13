@@ -1,0 +1,94 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: 京东
+servers:
+  - url: 'https://bizapi.jd.com/api/'
+paths:
+  /product/getCategory:
+    post:
+      summary: '获取类目信息'
+      operationId: product
+      tags:
+        - product
+      parameters:
+        - name: token
+          in: query
+          description: '固定值'
+          schema:
+            type: string
+          required: true
+        - name: cid
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int32
+            
+      responses:
+        '200':
+          description: '类目信息'
+          content:
+             application/json:
+               schema:
+                 $ref: '#/components/schemas/CategoryResponse'
+        default:
+          description: 异常报错
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+
+components:
+  schemas:
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+    CategoryResponse:
+      type: "object"
+      properties:
+        result:
+          $ref: "#/components/schemas/Category"
+        resultCode:
+          type: integer
+          format: int32
+        resultMessage:
+          type: string
+        success:
+          type: boolean
+          default: true
+    Category:
+      type: "object"
+      required:
+          - catId
+      properties:
+        catClass:
+          type: integer
+        catId:
+          type: integer
+        name:
+          type: string
+        parentId:
+          type: integer
+        state:
+          type: integer
+  securitySchemes:
+    oauth2:
+      type: "oauth2"
+      flows:
+        implicit:
+          authorizationUrl: "https://bizapi.jd.com/oauth2/accessToken"
+          scopes:
+            read: "example read scope"
+            write: "example write scope"
+security:
+  - oauth2: []
