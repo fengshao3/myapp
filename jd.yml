@@ -190,7 +190,7 @@ components:
             result:
                 type: array
                 items:
-                    $ref: "#/components/schemas/SkuDetail"
+                    $ref: "#/components/schemas/SimilarSku"
             resultCode:
                 type: integer
                 format: int32
