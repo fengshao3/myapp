@@ -38,6 +38,7 @@ paths:
                                 $ref: '#/components/schemas/Error'
     /product/getDetail:
         post:
+            summary: '获取商品详情'
             tags: 
               - product
             description: "获取商品详情"
