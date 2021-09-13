@@ -174,7 +174,14 @@ components:
         type: "object"
         properties:
             result:
-                $ref: "#/components/schemas/SkuDetail"
+                type: array
+                items:
+                    type: "object"
+                    properties:
+                        name:
+                            type: string
+                        page_num:
+                            type: string
             resultCode:
                 type: integer
                 format: int32
