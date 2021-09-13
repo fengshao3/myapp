@@ -184,7 +184,19 @@ components:
           type: string
         success:
           type: boolean
-          default: true 
+          default: true
+    SimilarSkuResponse:
+        properties:
+            result:
+                $ref: "#/components/schemas/SkuDetail"
+            resultCode:
+                type: integer
+                format: int32
+            resultMessage:
+                type: string
+            success:
+                type: boolean
+                default: true 
     SkuDetail:
         type: "object"
         properties:
