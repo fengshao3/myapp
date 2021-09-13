@@ -112,8 +112,29 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/PoolPageResponse'
-
-
+    /product/getSimilarSku:
+        post:
+            summary: '获取同类商品'
+            tags:
+              - product
+            parameters:
+              - name: sku
+                in: query
+                description: "sku id"
+                schema:
+                  type: string
+                required: true
+              - name: token
+                in: query
+                schema:
+                    type: string
+            responses:
+                "200":
+                    description: '获取同类商品'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/PoolPageResponse'
 components:
   schemas:
     Error:
