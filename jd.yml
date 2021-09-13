@@ -78,11 +78,11 @@ paths:
                 required: true
             responses:
                 "200":
-                    description: '商品详情响应'
+                    description: '商品池响应'
                     content:
                         application/json:
                             schema:
-                                $ref: '#/components/schemas/SkuDetailResponse'
+                                $ref: '#/components/schemas/productPoolResponse'
 
 components:
   schemas:
@@ -156,20 +156,33 @@ components:
             introduction:
                 type: string
     Category:
-      type: "object"
-      required:
+        type: "object"
+        required:
           - catId
-      properties:
-        catClass:
-          type: integer
-        catId:
-          type: integer
-        name:
-          type: string
-        parentId:
-          type: integer
-        state:
-          type: integer
+        properties:
+            catClass:
+                type: integer
+            catId:
+                type: integer
+            name:
+                type: string
+            parentId:
+                type: integer
+            state:
+                type: integer
+    ProductPoolResponse:
+        type: "object"
+        properties:
+            result:
+                $ref: "#/components/schemas/SkuDetail"
+            resultCode:
+                type: integer
+                format: int32
+            resultMessage:
+                type: string
+            success:
+                type: boolean
+                default: true
   securitySchemes:
     oauth2:
       type: "oauth2"
