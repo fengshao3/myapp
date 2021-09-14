@@ -135,6 +135,43 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/SimilarSkuResponse'
+    /price/getSellPrice:
+        post:
+            summary: '获取商品价格'
+            tags:
+              - price
+            parameters:
+              - name: sku
+                in: query
+                description: "商品编号，请以，(英文逗号)分割"
+                example: '129408,129409'
+                schema:
+                  type: string
+                required: true
+              - name: skuInfos
+                in: query
+                schema:
+                    type: array
+                    items:
+                        type: "object"
+                        properties:
+                            skuId:
+                                type: integer
+                            num:
+                                type: integer
+
+              - name: token
+                in: query
+                schema:
+                    type: string
+            responses:
+                "200":
+                    description: '获取同类商品'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SimilarSkuResponse'
+     
 components:
   schemas:
     Error:
