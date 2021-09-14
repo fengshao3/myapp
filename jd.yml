@@ -159,6 +159,7 @@ paths:
                                 type: integer
                             num:
                                 type: integer
+                                default: 1
 
               - name: token
                 in: query
