@@ -139,15 +139,44 @@ paths:
         post:
             summary: '商品可购状态'
             tags:
-                - price
+                - product
             parameters:
-                - name:
-        responses:
-            '200':
-                content:
-                    application/json:
-                        schema:
-                            $ref: '#/components/schemas/SkuPriceResponse'
+                - name: token
+                  in: query
+                  schema:
+                      type: string
+                - name: skuIds
+                  in: query
+                  schema:
+                      type: string
+                      example: '1,2'
+                - name: province
+                  in: query
+                  schema:
+                      type: string
+                      description: '省，京东一级地址编号'
+                - name: city
+                  in: query
+                  schema:
+                      type: string
+                      description: '市，京东二级地址编号'
+                - name: county
+                  in: query
+                  schema:
+                      type: string
+                      description: '县，京东三级地址编号'
+                - name: town
+                  in: query
+                  schema:
+                      type: string
+                      description: '镇，京东四级地址编号'
+            responses:
+                "200":
+                    description: "商品可购状态返回"
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/TotalCheckResponse'
 
     /price/getSellPrice:
         post:
@@ -264,6 +293,29 @@ components:
             success:
                 type: boolean
                 default: true
+    totalCheckResponse:
+        properties:
+            result:
+                type: array
+                items:
+                    $ref: "#/components/schemas/SkucanPurchaseMsg"
+            resultCode:
+                type: integer
+                format: int32
+            resultMessage:
+                type: string
+            success:
+                type: boolean
+                default: true
+    SkucanPurchaseMsg:
+        properties:
+            skuId:
+                type: integer
+                minimum: 0
+            canPurchase:
+                type: boolean
+            message:
+                type: string    
     SkuPrice:
         properties:
             price:
