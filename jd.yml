@@ -234,6 +234,29 @@ paths:
                         application/json:
                             schema:
                                 $ref: "#/components/schemas/SkuImageResponse" 
+    /product/skuState:
+        post:
+            summary: '商品上下架'
+            parameters:
+                - name: token
+                  in: query
+                  schema:
+                      type: string
+                - name: sku
+                  in: query
+                  schema:
+                      type: string
+                      example: '1,2'
+            responses:
+                "200":
+                    description: '商品上下架返回'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/SkuStateResponse" 
+
+
+
 components:
   schemas:
     Error:
@@ -342,6 +365,31 @@ components:
             success:
                 type: boolean
                 default: true
+    SkuStateResponse:
+        properties:
+            result:
+                type: array
+                items:
+                    type: array
+                    items:
+                        $ref: "#/components/schemas/SkuState"
+            resultCode:
+                type: integer
+                format: int32
+            resultMessage:
+                type: string
+            success:
+                type: boolean
+                default: true
+    SkuState:
+        properties:
+            state:
+                type: integer
+                enum: 
+                  - 1
+                  - 2
+            sku:
+                type: integer
     SkuImage:
         properties:
             id:
