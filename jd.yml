@@ -260,6 +260,15 @@ components:
             jdPrice:
                 type: number
                 format: double
+            tax:
+                type: number
+                format: double
+            taxPrice:
+                type: number
+                format: double
+            nakedPrice:
+                type: number
+                format: double
     SkuDetail:
         type: "object"
         properties:
