@@ -143,7 +143,12 @@ paths:
             parameters:
                 - name:
         responses:
-            '200'
+            '200':
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/SkuPriceResponse'
+
     /price/getSellPrice:
         post:
             summary: '获取商品价格'
