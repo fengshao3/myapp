@@ -160,18 +160,17 @@ paths:
                             num:
                                 type: integer
                                 default: 1
-
               - name: token
                 in: query
                 schema:
                     type: string
             responses:
                 "200":
-                    description: '获取同类商品'
+                    description: '获取商品详情'
                     content:
                         application/json:
                             schema:
-                                $ref: '#/components/schemas/SimilarSkuResponse'
+                                $ref: '#/components/schemas/SkuPriceResponse'
      
 components:
   schemas:
@@ -236,7 +235,31 @@ components:
                 type: string
             success:
                 type: boolean
-                default: true 
+                default: true
+    SkuPriceResponse:
+        properties:
+            result:
+                type: array
+                items:
+                    $ref: "#/components/schemas/SkuPrice"
+            resultCode:
+                type: integer
+                format: int32
+            resultMessage:
+                type: string
+            success:
+                type: boolean
+                default: true
+    SkuPrice:
+        properties:
+            price:
+                type: number
+                format: double
+            skuId:
+                type: integer
+            jdPrice:
+                type: number
+                format: double
     SkuDetail:
         type: "object"
         properties:
