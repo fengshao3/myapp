@@ -214,7 +214,26 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/SkuPriceResponse'
-     
+    /product/skuImage:
+        post:
+            summary: '获取商品图片'
+            parameters:
+                - name: token
+                  in: query
+                  schema:
+                      type: string
+                - name: sku
+                  in: query
+                  schema:
+                      type: string
+                      example: '1,2'
+            responses:
+                "200":
+                    description: '商品图片返回'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/SkuImageResponse" 
 components:
   schemas:
     Error:
@@ -307,6 +326,48 @@ components:
             success:
                 type: boolean
                 default: true
+    SkuImageResponse:
+        properties:
+            result:
+                type: array
+                items:
+                    type: "object"
+                    additionalProperties:
+                        $ref: "#/components/schemas/SkuImage"
+            resultCode:
+                type: integer
+                format: int32
+            resultMessage:
+                type: string
+            success:
+                type: boolean
+                default: true
+    SkuImage:
+        properties:
+            id:
+                type: integer
+            skuId:
+                type: integer
+            path:
+                type: string
+            created:
+                type: string
+                format: date
+            modified:
+                type: string
+                format: date
+            yn:
+                type: integer
+            isPrimary:
+                type: integer
+            orderSort:
+                type: integer
+            position:
+                type: integer
+            type:
+                type: integer
+            features:
+                type: string
     SkucanPurchaseMsg:
         properties:
             skuId:
