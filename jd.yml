@@ -135,6 +135,15 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/SimilarSkuResponse'
+    /product/totalCheckNew:
+        post:
+            summary: '商品可购状态'
+            tags:
+                - price
+            parameters:
+                - name:
+        responses:
+            '200'
     /price/getSellPrice:
         post:
             summary: '获取商品价格'
