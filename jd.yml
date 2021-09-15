@@ -189,6 +189,14 @@ paths:
                   schema:
                       type: integer
                   required: true
+            responses:
+                "200":
+                    description: '获取小'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SkuPriceResponse'
+
     /price/getSellPrice:
         post:
             summary: '获取商品价格'
