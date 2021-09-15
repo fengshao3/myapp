@@ -195,7 +195,7 @@ paths:
                     content:
                         application/json:
                             schema:
-                                $ref: '#/components/schemas/SkuPriceResponse'
+                                $ref: '#/components/schemas/MessageResponse'
 
     /price/getSellPrice:
         post:
