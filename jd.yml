@@ -177,7 +177,18 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/TotalCheckResponse'
-
+    /message/get:
+        post:
+            summary: '获取消息'
+            tags:
+                - message
+            parameters:
+                - name: type
+                  in: query
+                  description: '消息类型'
+                  schema:
+                      type: integer
+                  required: true
     /price/getSellPrice:
         post:
             summary: '获取商品价格'
