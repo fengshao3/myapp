@@ -697,6 +697,8 @@ components:
         properties:
             pageCount:
                 type: integer
+                minimum: 0
+                maximum: 10
             skuIds:
                 type: array
                 items:
