@@ -684,6 +684,7 @@ components:
                             type: string
                         page_num:
                             type: string
+                            format: number
             resultCode:
                 type: integer
                 format: int32
