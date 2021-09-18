@@ -664,6 +664,9 @@ components:
         properties:
             catClass:
                 type: integer
+                minimum: 1
+                maximum: 3
+                example: 1
             catId:
                 type: integer
             name:
