@@ -675,6 +675,9 @@ components:
                 type: integer
             state:
                 type: integer
+                enum:
+                    - 1
+                    - 0
     ProductPoolResponse:
         type: "object"
         properties:
