@@ -655,6 +655,9 @@ components:
             state:
                 type: integer
                 format: int1
+                enum:
+                    - 0
+                    - 1
             sku:
                 type: integer
                 format: int64
