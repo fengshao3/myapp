@@ -358,7 +358,7 @@ components:
         result:
           $ref: "#/components/schemas/Category"
         resultCode:
-          type: integer
+          type: string
           format: int32
         resultMessage:
           type: string
@@ -370,7 +370,7 @@ components:
         result:
           $ref: "#/components/schemas/ProductPoolPage"
         resultCode:
-          type: integer
+          type: string
           format: int32
         resultMessage:
           type: string
@@ -382,7 +382,7 @@ components:
         result:
           $ref: "#/components/schemas/SkuDetail"
         resultCode:
-          type: integer
+          type: string
           format: int32
         resultMessage:
           type: string
@@ -396,7 +396,7 @@ components:
                 items:
                     $ref: "#/components/schemas/SimilarSku"
             resultCode:
-                type: integer
+                type: string
                 format: int32
             resultMessage:
                 type: string
@@ -410,7 +410,7 @@ components:
                 items:
                     $ref: "#/components/schemas/SkuPrice"
             resultCode:
-                type: integer
+                type: string
                 format: int32
             resultMessage:
                 type: string
@@ -424,7 +424,7 @@ components:
                 items:
                     $ref: "#/components/schemas/SkucanPurchaseMsg"
             resultCode:
-                type: integer
+                type: string
                 format: int32
             resultMessage:
                 type: string
@@ -440,7 +440,7 @@ components:
                     additionalProperties:
                         $ref: "#/components/schemas/SkuImage"
             resultCode:
-                type: integer
+                type: string
                 format: int32
             resultMessage:
                 type: string
@@ -456,7 +456,7 @@ components:
                     items:
                         $ref: "#/components/schemas/SkuState"
             resultCode:
-                type: integer
+                type: string
                 format: int32
             resultMessage:
                 type: string
@@ -472,7 +472,7 @@ components:
                     items:
                         $ref: "#/components/schemas/SkuCheck"
             resultCode:
-                type: integer
+                type: string
                 format: int32
             resultMessage:
                 type: string
@@ -488,7 +488,7 @@ components:
                     items:
                         $ref: "#/components/schemas/AreaLimit"
             resultCode:
-                type: integer
+                type: string
                 format: int32
             resultMessage:
                 type: string
@@ -504,7 +504,7 @@ components:
                     items:
                         $ref: "#/components/schemas/Message"
             resultCode:
-                type: integer
+                type: string
                 format: int32
             resultMessage:
                 type: string
@@ -692,7 +692,7 @@ components:
                             type: string
                             format: number
             resultCode:
-                type: integer
+                type: string
                 format: int32
             resultMessage:
                 type: string
