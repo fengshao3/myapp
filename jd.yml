@@ -373,6 +373,7 @@ components:
         resultCode:
           type: string
           format: int32
+          default: "0000"
         resultMessage:
           type: string
         success:
@@ -385,6 +386,7 @@ components:
         resultCode:
           type: string
           format: int32
+          default: "0000"
         resultMessage:
           type: string
         success:
@@ -399,6 +401,7 @@ components:
             resultCode:
                 type: string
                 format: int32
+                default: "0000"
             resultMessage:
                 type: string
             success:
@@ -413,6 +416,7 @@ components:
             resultCode:
                 type: string
                 format: int32
+                default: "0000"
             resultMessage:
                 type: string
             success:
@@ -427,6 +431,7 @@ components:
             resultCode:
                 type: string
                 format: int32
+                default: "0000"
             resultMessage:
                 type: string
             success:
@@ -443,6 +448,7 @@ components:
             resultCode:
                 type: string
                 format: int32
+                default: "0000"
             resultMessage:
                 type: string
             success:
@@ -459,6 +465,7 @@ components:
             resultCode:
                 type: string
                 format: int32
+                default: "0000"
             resultMessage:
                 type: string
             success:
@@ -475,6 +482,7 @@ components:
             resultCode:
                 type: string
                 format: int32
+                default: "0000"
             resultMessage:
                 type: string
             success:
@@ -491,6 +499,7 @@ components:
             resultCode:
                 type: string
                 format: int32
+                default: "0000"
             resultMessage:
                 type: string
             success:
@@ -507,6 +516,7 @@ components:
             resultCode:
                 type: string
                 format: int32
+                default: "0000"
             resultMessage:
                 type: string
             success:
@@ -695,6 +705,7 @@ components:
             resultCode:
                 type: string
                 format: int32
+                default: "0000"
             resultMessage:
                 type: string
             success:
