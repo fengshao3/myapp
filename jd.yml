@@ -30,6 +30,15 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/CategoryResponse'
+                '200':
+                    description: '文具'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/CategoryResponse'
+                                example: 
+                                    test1: {}
+                                    test2: {"id":null}
                 default:
                     description: 异常报错
                     content:
