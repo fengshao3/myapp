@@ -30,6 +30,7 @@ paths:
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/CategoryResponse'
+                            example: "{}"
                 default:
                     description: 异常报错
                     content:
